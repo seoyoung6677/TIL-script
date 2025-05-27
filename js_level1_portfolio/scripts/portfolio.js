@@ -19,22 +19,23 @@ thumbNailA[0].addEventListener('click',function(){
     console.log(this); //이벤트객체자동인식하는지 확인
     console.log(this.children[0].src);
     console.log(popupBg.children[0].children[0].src);//팝업 bg의 자식의 자식의 src확인
-    popupShow(); //팝업출력함수 호출
-    popupBg.children[0].children[0].src = this.children[0].src /* 나의 자식의 src를  */
+    popupShow(this); //팝업출력함수 호출
+     /* 나의 자식의 src를  */
     
 });
 thumbNailA[1].addEventListener('click',function(){
-    console.log(1); //작동 테스트
-    console.log(this); //이벤트객체자동인식하는지 확인
-    console.log(this.children[1].src);
-    console.log(popupBg.children[0].children[1].src);//팝업 bg의 자식의 자식의 src확인
-    popupShow(); //팝업출력함수 호출
-    popupBg.children[1].children[1].src = this.children[1].src /* 나의 자식의 src를  */
-
-});
+    popupShow(this); //팝업출력함수 호출
+})
+thumbNailA[2].addEventListener('click',function(){
+    popupShow(this); //팝업출력함수 호출
+})
 thumbNailA[2].addEventListener('click',popupShow)
-function popupShow (){
-    return popupBg.style.display = 'flex'; /* a를 누르면 팝업이 보이게 됨 */ /* 원래 가지던 flex속성을 넣어줘야함 */
+function popupShow (target){
+    console.log('-----------함수시작위치와 에러체크')
+    //console.log(this.children[0]);
+     popupBg.style.display = 'flex'; /* a를 누르면 팝업이 보이게 됨 */ /* 원래 가지던 flex속성을 넣어줘야함 */
+    popupBg.children[0].children[0].src = target.children[0].src
+    return; //함수종료
 }
 //3. (팝업 실행 기준) 배경 (popup_bg)클릭 시 팝업 숨기기(popup_bg)
 popupBg.addEventListener('click',popupHide)
