@@ -1,0 +1,92 @@
+main {
+    background:aqua;
+    width:995px; margin:0 auto;
+}
+main .path {margin-bottom:26px;}
+main section {
+    display:grid;
+    grid-template-columns:630px 341px;
+    justify-content: space-between;
+}
+main section .left_thumnail {
+    display:flex;
+    background:yellow;
+
+}
+main section .left_thumnail .small {}
+main section .left_thumnail .small a {
+    width:56px; height:56px; display:block;
+    overflow:hidden;
+    border-radius:5px; margin-bottom:10px;
+}
+main section .left_thumnail .small a img {}
+main section .left_thumnail .big {
+    width:calc(100% - (56px + 15px));
+    margin-left:15px;
+}
+main section .left_thumnail .bg img {width:100%;}
+main section .right_order {background:lime;}
+main section .right_order > * {margin-bottom:25px; background:yellow;}
+main section .right_order .brand {}
+main section .right_order h1 {}
+main section .right_order .review {}
+main section .right_order .review .score {}
+main section .right_order .review .score em {}
+main section .right_order .review .num {}
+main section .right_order .sale_price {}
+main section .right_order .sale_price em {}
+main section .right_order .sale_price del {}
+main section .right_order > .price {}
+main section .right_order > .price em {}
+main section .right_order .benefit_delivery {
+    overflow:hidden;
+}
+main section .right_order .benefit_delivery  dt {
+    width:80px; background:pink;
+    float:left;
+}
+main section .right_order .benefit_delivery  dd {
+    width:calc(100% - 80px); background:aqua;
+    float:right;
+}
+main section .right_order .benefit_delivery  dd em{}
+main section .right_order .product_option {
+    display:flex; flex-flow:column nowrap;
+}
+main section .right_order .product_option  > * {
+    padding:10px 17px;
+    border-radius:5px;
+    outline:none;
+    height:44px;
+    border:1px solid #aaa;
+    padding-left:17px;
+    
+}
+main section .right_order .product_option select[name=color]{margin-bottom:25px;}
+main section .right_order .product_option select[name=color] option{ }
+main section .right_order .product_option select[name=size]{}
+main section .right_order .product_option select[name=size]option{}
+main section .right_order .total {}
+main section .right_order .total p {}
+main section .right_order .total .price {}
+main section .right_order .total .price em {}
+main section .right_order .btn_group * {
+    border:1px solid #59AFFF;
+    background:#fff;
+    color:#59AFFF;
+    padding:20px 0;
+    margin-right:10px;
+    width:165.5px; height:57px;
+    font-size:1.063rem
+    
+    
+}
+main section .right_order .btn_group {
+    display:flex; justify-content: space-between;
+}
+main section .right_order .btn_group #cart_btn{
+    background:#fff; color:#59AFFF;
+}
+main section .right_order .btn_group #buy_btn{
+    color:#fff; background:#59AFFF;
+}

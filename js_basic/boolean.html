@@ -49,10 +49,76 @@
         if(null){
             console.log('조건이 참일때 실행되는 문구')
         }
-
-        </script>
+        console.log('=============5/28 조건문 공부');
+        //if(조건식) {조건식 결과가 참일때 실행되는 스크립트}
+        //const userId = prompt('아이디를 입력하세요');
+        /* if(userId){
+            alert(userId+'님 안녕하세요'); //참일때 실행되는 거니까 입력 안하면 아무것도 안뜸(거짓이니까), 공백도 문자로 인식함
+        } */
+        //관리자 아이디: admin
+        //관리자만 인식해서 인사하는 알고리즘
+        /* if(userId === 'admin'){
+            alert('관리자님 어서오세요 찡긋')
+            
+        }; */
+        //관리자가 아닌 사람이 접속하면 일반 사용자로 판단해서 인사하는 알고리즘
+        //'회원님 안녕하세여'
+        /*  if(userId!='admin' ){
+            alert('회원님 안녕하세여 인사 박습니다')
+        }; */
+        
+    </script>
 </head>
 <body>
-    
+    <div id="join">
+        <input type="text" name="user_id" placeholder="아이디를 입력하세요">
+        <button type="button" id="id_overlap_btn">아이디 중복확인</button>
+        <p class="overlap_error_msg"><!-- 오류메시지출력위치 --></p>
+    </div>
+    <!-- 관리자와 동일한 아이디를 할 수 없는 어이디 중복확인 알고리즘
+        1. 사용자가 아이디를 입력했다.
+        2.아이디 중복확인 버튼을 클릭했다.
+        3. 만약 사용자가 입력한 아이디가 'admin'이라면
+        4. 오류메세지가 출력됨. "사용중인 아이디입니다. 다른 아이디를 입력하세요" -->
+    <div class="print">
+        <input type="number" value="1" class="page_num">
+        <button type="button" id="print_btn">인쇄</button>
+    </div>
+    <!-- 2장 이상 입력 후 인쇄버튼 클릭 시 인쇄가능 window.print()
+        그 이하일 경우 '최소 2장 이상부터 인쇄가 가능합니다' 경고메세지 출력 -->
+    <script>
+    /* 관리자와 동일한 아이디를 할 수 없는 어이디 중복확인 알고리즘 */
+        const userId = document.querySelector('input[name=user_id]');
+        const idOverlapBtn = document.querySelector('#id_overlap_btn');
+        const overlapMsg = document.querySelector('.overlap_error_msg');
+        console.log(userId,idOverlapBtn,overlapMsg);
+
+        idOverlapBtn.addEventListener('click',idChk )
+        function idChk(){
+            console.log(userId.value); //아이디중복확인란에 글자쓰면 그대로 인식 userid의 값
+            if(userId.value =='admin'){
+                return overlapMsg.textContent ="사용중인 아이디입니다. 다른 아이디를 입력하세요 빠꾸 삐리삐리";
+            }
+            if(userId.value ==''){ /* 공백없이 빈문자열 */
+                return overlapMsg.textContent='아이디가 입력되지 않았습니다 입력 좀요'
+            }
+        }
+        //인쇄 알고리즘
+        const pageNum = document.querySelector('.page_num')
+        const printBtn = document.querySelector('#print_btn')
+        console.log(pageNum, printBtn);
+        //버튼 클릭시 이벤트 실행
+        printBtn.addEventListener('click',printOk)
+        function printOk(){
+            console.log();
+            if(pageNum.value >= 2){
+                /* return console.log(2222) */
+                return window.print();
+            }
+            if(pageNum.value <= 1){
+                return window.alert('최소 2장 이상부터 인쇄가 가능합니다')
+            }
+        }
+        </script>
 </body>
 </html>
