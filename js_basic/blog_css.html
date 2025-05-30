@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>복습 + 블로그</title>
+    <style>
+        #bg {
+            background:url(https://i.pinimg.com/736x/2b/ca/53/2bca531c7091a347cc2f64c95ec790b9.jpg) no-repeat;
+            width:100%; height:100vh;
+        }
+        #bg .gradient {
+            /* 그레디언트 색상 */
+            /* 직선 방향 그레디언트 background:linear-gradient(,) */
+            /* 원형 방향 그레디언트 background:radial-gradient(,) */
+            width:100%; height:100vh;
+           /*  background:radial-gradient(circle,white,navy, black ); /* 원형 그레디언트 */
+           /*  opacity:0.5;  */
+            background:linear-gradient(180deg,rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 23%, rgba(0, 212, 255, 1) 55%, rgba(202, 229, 235, 1) 87%);
+            opacity:0.5; /* 자식,자손까지 영향 rgba로 적어야 자식,자손까지 영향 안감 */
+        }
+        #bg .gradient section {
+            /* a,b 두개의 요소를 grid로 정렬하고싶다면 그 부모(section)에게 명령 */
+            display:grid; /* 그리드 필수선언 */
+            /* grid-template-columns:100px 200px; */ /* 1열은 100px, 2열은 200px으로 세팅. 순서대로 자식 너비 지정 */
+            /* grid-template-columns:repeat(2, minmax(200px, auto)); */
+            grid-template-columns:200px 1fr;
+            /* 1열 2열 반복(repeat)적용 최소(min) 200, 최대(max) auto 100%와 같이 인식 */
+           /*  grid-template-rows:300px 100px; */ /* 1행 자식의 높이지정. 1행 300, 2행 100 자식의 높이지정 */
+            grid-template-rows:repeat(2, 100px); /* 2행에 100px 반복 */
+        }
+        #bg .gradient section > div {
+           /*  width:100px; 그리드의 자식한테 넓이를 주면 ㄴㄴ  */ /* height:100px; */
+           /* 부모에 grid로 열,행 크기 입력 시 자식에는 별도로 크기를 입력하면 안된다. */
+            border:5px solid #fff;
+        }
+        #bg .gradient section .a {}
+        #bg .gradient section .b {}
+        #bg .gradient section > div svg {width:24px;}
+        .box {
+            display:grid;
+            grid-template-areas:
+                'list1 list2 list3'
+                'list4 list5 list6';
+                grid-template-columns:repeat(3, 100px);
+                grid-template-rows:100px 200px;
+                gap:10px 20px; 
+        }
+        .box li {border:2px solid #000;}
+        .box li:nth-child(1) {grid-area:list1}
+        .box li:nth-child(2) {grid-area:list2}
+        .box li:nth-child(3) {grid-area:list3}
+        .box li:nth-child(4) {grid-area:list4}
+        .box li:nth-child(5) {grid-area:list5}
+        .box li:nth-child(6) {grid-area:list6}
+    </style>
+</head>
+<body>
+    <ul class="box">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+    </ul>
+    <div id ="bg">
+        <div class="gradient">
+            <section>
+                <div class="a"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6 .1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg></div>
+                <div class="b"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M320.2 243.8l-49.7 99.4c-6 12.1-23.4 11.7-28.9-.6l-56.9-126.3-30 71.7H60.6l182.5 186.5c7.1 7.3 18.6 7.3 25.7 0L451.4 288H342.3l-22.1-44.2zM473.7 73.9l-2.4-2.5c-51.5-52.6-135.8-52.6-187.4 0L256 100l-27.9-28.5c-51.5-52.7-135.9-52.7-187.4 0l-2.4 2.4C-10.4 123.7-12.5 203 31 256h102.4l35.9-86.2c5.4-12.9 23.6-13.2 29.4-.4l58.2 129.3 49-97.9c5.9-11.8 22.7-11.8 28.6 0l27.6 55.2H481c43.5-53 41.4-132.3-7.3-182.1z"/></svg></div>
+                <div class="c"><button type="button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M290.6 192c-20.2 0-106.8 2-162.6 86V192c0-52.9-43.1-96-96-96-17.7 0-32 14.3-32 32s14.3 32 32 32c17.6 0 32 14.4 32 32v256c0 35.3 28.7 64 64 64h176c8.8 0 16-7.2 16-16v-16c0-17.7-14.3-32-32-32h-32l128-96v144c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V289.9c-10.3 2.7-20.9 4.5-32 4.5-61.8 0-113.5-44.1-125.4-102.4zM448 96h-64l-64-64v134.4c0 53 43 96 96 96s96-43 96-96V32l-64 64zm-72 80c-8.8 0-16-7.2-16-16s7.2-16 16-16 16 7.2 16 16-7.2 16-16 16zm80 0c-8.8 0-16-7.2-16-16s7.2-16 16-16 16 7.2 16 16-7.2 16-16 16z"/></svg>고양이가 킹왕짱 최고</button></div>
+            </section>
+        </div>
+    </div>
+</body>
+</html>
