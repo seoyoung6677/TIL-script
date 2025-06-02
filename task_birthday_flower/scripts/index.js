@@ -1,7 +1,4 @@
 
-const userYear =document.querySelector('input[name=user_year]');
-const userMonth =document.querySelector('input[name=user_month]');
-const userDay =document.querySelector('input[name=user_day]');
 const birthday_flower = [
     {
         month:1,
@@ -53,3 +50,19 @@ const birthday_flower = [
         content:'축하, 감사'
     }
 ]
+//test
+console.log(birthday_flower[0].month);
+console.log(birthday_flower[0].flower);
+console.log(birthday_flower[0].content);
+//변수
+const userMonth =document.querySelector('input[name=user_month]');
+const result =document.querySelector('#result');
+const userBtn =document.querySelector('#btn');
+console.log(userMonth,result,userBtn);
+
+userBtn.addEventListener('click',birthdayFunc);
+function birthdayFunc(){
+    if(userMonth.value >= 1 && userMonth.value <=12){
+        result.textContent =`${birthday_flower[userMonth.value-1].month}월의 탄생화는 ${birthday_flower[userMonth.value-1].flower}, 꽃말은 ${birthday_flower[userMonth.value-1].content}입니다.`
+    }
+};
