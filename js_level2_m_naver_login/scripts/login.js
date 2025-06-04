@@ -21,3 +21,37 @@ langSel.addEventListener('click',()=>{
     }
     //langOpen 숨겨진 상태면 보이기
 })
+//네이버 로그인 에러 메세지 알고리즘
+//1. 아이디만 입력 시 '비밀번호를 입력해주세요'
+//2. 비밀번호만 입력 시 '아이디 또는 전화번호를 입력해 주세요'
+//3. 입력한 아이디와 비밀번호가 다를 시
+/* 
+조건1) 아이디와 비밀번호를 모두 입력하지 않고 로그인 클릭 시
+조건1 결과) 아이디 또는 전화번호를 입력해 주세요.
+조건2) 아이디를 이볅하고 비밀번호를 입력하지 않고 로그인 클릭 시
+조건2 결과) 비미번호를 입력해 주세요
+조건3) 아이디, 비밀번호를 모두 입력하고 로그인 클릭 시 정보가 틀렸을때
+조건3 결과) 아이디, 비밀번호 입력정보가 잘못되었습니다. 다시 입력해주세여
+조건4) 조건 3 상황에서 로그인 실패가 3회 이상일때
+조건4결과) 영수증 퀴즈와 아이디(로그인 전화번호, 로그인 전용 아이디),' 비밀번호 또는 자동잊력 방지 문자를 잘못 입력하였습니다. 입력하신 내용을 다시 확인해주세요' 메세지 출력
+ */
+
+
+
+//조건1) 아이디와 비밀번호를 모두 입력하지 않고 로그인 클릭 시
+//조건1 결과) 아이디 또는 전화번호를 입력해 주세요.
+const userId =document.querySelector('input[name=user_id]')
+const userPw =document.querySelector('input[name=user_pw]')
+const errorMsg=document.querySelector('.error_msg')
+const loginBtn=document.querySelector('#login_btn')
+console.log(userId,userPw,errorMsg,loginBtn)
+
+loginBtn.addEventListener('click',()=>{
+    /*  if(userId.value=='' && userPw.value ==''){
+        errorMsg.textContent = '아이디 또는 전화번호를 입력해 주세요'
+    } */
+   //삼항조건 활용 조건1
+   //조건식 ? 조건식참결과: 조건식 거짓 결과
+   //조건결과대입변수=조건식? 조건식 참 결과: 조건식 거짓 결과
+    errorMsg.textContent = userId.value=='' && userPw.value =='' ? '아이디 또는 전화번호를 입력해 주세요' : '';
+})
