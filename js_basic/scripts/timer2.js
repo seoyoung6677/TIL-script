@@ -1,4 +1,4 @@
-let num = 0; //0, 400, 800 출력을 위한 변수
+/* let num = 0; //0, 400, 800 출력을 위한 변수
 const slideContainer =document.querySelector('.slide_container');
 slideContainer.style.transition ='transform 0.3s';
 const sliderTimer =setInterval(()=>{
@@ -8,8 +8,16 @@ const sliderTimer =setInterval(()=>{
     console.log(`현재 num${num}, x축값:${400*num}`)
 },3000)
 
-
-
+ */
+let num = 2; //0, 400, 800 출력을 위한 변수
+const slideContainer =document.querySelector('.slide_container');
+slideContainer.style.transition ='transform 0.3s';
+const sliderTimer =setInterval(()=>{
+    num--;
+    if(num>2){num=0}
+    slideContainer.style.transform = `translateX(-${400*num}px)`
+    console.log(`현재 num${num}, x축값:${400*num}`)
+},3000)
 
 
 
