@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>swiper-direction1</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <!--플러그인 필수 css cdn 연결-->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <!--플러그인 필수 JS cdn 연결-->
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <style>
+        * {margin:0; padding:0; line-height:1.0; box-sizing:border-box;}
+        .swiper {width:1000px; height:500px;}
+        .swiper .swiper-wrapper { 
+             }
+        .swiper .swiper-wrapper .swiper-slide {
+            background-position: center;
+            background-size:cover;
+            background-repeat: no-repeat;
+            text-align:left;
+            padding:100px 100px;;
+            
+
+        }
+        .swiper .swiper-wrapper .swiper-slide * {margin-bottom:20px;}
+        .swiper .swiper-wrapper .swiper-slide h1 {
+            font-size:3.5rem;
+            color:#fff;
+            
+        }
+        .swiper .swiper-wrapper .swiper-slide p {
+            font-size:2rem;
+        }
+        .swiper .swiper-wrapper .swiper-slide a {
+            background-color:yellow;
+            margin:200px;
+            border-radius: 30px;
+            padding:5px 20px;;
+            color:#000;
+        }
+        .swiper .swiper-wrapper .slide1 {
+            background-image:url(./images/bnr1.jpg);
+        }
+        
+        .swiper .swiper-wrapper .slide2 {
+            background-image:url(./images/bnr2.jpg);
+        }
+        .swiper .swiper-wrapper .slide3 {
+            background-image:url(./images/bnr3.jpg);
+        }
+        .swiper .swiper-wrapper .slide4 {
+            background-image:url(./images/bnr4.jpg);
+        }
+        .swiper .swiper-wrapper .swiper-slide .slide1 h1 {}
+        .swiper .swiper-wrapper .swiper-slide .slide1 p {}
+        .swiper .swiper-wrapper .swiper-slide .slide1 a {}
+        </style>
+</head>
+<body>
+    <div class="ad swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide slide1">
+                <h1>고래인형 특가</h1>
+                <p>고래인형특가</p>
+                <a href="#">사러가기</a>
+            </div>
+            <div class="swiper-slide slide2">
+                <h1>핸드폰악세사리</h1>
+                <p>고래인형특가</p>
+                <a href="#">사러가기</a>
+            </div>
+            <div class="swiper-slide slide3">
+                <h1>카메라 폰케이스</h1>
+                <p>고래인형특가</p>
+                <a href="#">사러가기</a>
+            </div>
+            <div class="swiper-slide slide4">
+                <h1>신학기 노트 특가</h1>
+                <p>고래인형특가</p>
+                <a href="#">사러가기</a>
+            </div>
+        </div>
+    </div>    
+    <script>
+        const adSlide = new Swiper('.ad',{
+            autoplay:{delay:1000},
+            loop:true,
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
